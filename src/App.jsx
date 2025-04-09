@@ -4,7 +4,6 @@ import TaskForm from './components/TaskForm/TaskForm'
 import TaskList from './components/TaskList/TaskList'
 import TaskFilter from './components/TaskFilter/TaskFilter'
 
-
 function App() {
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem('tasks')
@@ -46,7 +45,7 @@ function App() {
   })
 
   return (
-    <div className="min-h-screen bg-ps2-black text-ps2-silver">
+    <div className="min-h-screen text-ps2-silver">
       <div className="container mx-auto px-4 max-w-2xl py-8">
         {/* Header PS2 */}
         <div className="mb-12 text-center">

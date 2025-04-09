@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animaciones personalizadas al estilo PS2*/
+/* Animaciones personalizadas al estilo PS2 */
 @keyframes subtleSlide {
   from {
     opacity: 0;
@@ -21,8 +21,9 @@
 /* Estilos base personalizados PS2 */
 @layer base {
   body {
-    @apply bg-stone-50 text-stone-800;
+    @apply text-stone-800;
     font-family: 'Inter', system-ui, sans-serif;
+    background: transparent !important;
   }
   
   input, textarea {
@@ -33,4 +34,108 @@
   button {
     @apply transition-colors duration-200;
   }
+}
+
+/* Estilos del fondo PS2 */
+.ps2-bg-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.ps2-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  width: 120%;
+  height: 120%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  filter: brightness(0.85) contrast(1.1);
+  object-fit: cover;
+}
+
+.ps2-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.ps2-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Efecto scanlines mejorado */
+.ps2-scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.08) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.03),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.03)
+    );
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 15;
+  animation: scanline 6s linear infinite;
+  mix-blend-mode: overlay;
+  will-change: transform;
+}
+
+@keyframes scanline {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+/* Componentes específicos PS2 */
+.shadow-ps2 {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 
+              0 0 8px rgba(0, 0, 255, 0.15);
+}
+
+.border-ps2 {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Colores personalizados PS2 */
+.text-ps2-silver {
+  color: #c0c0c0;
+}
+
+.text-ps2-blue {
+  color: #00a8ff;
+}
+
+.text-ps2-red {
+  color: #ff3e3e;
+}
+
+.bg-ps2-black {
+  background-color: #0a0a0a;
+}
+
+.bg-ps2-gray {
+  background-color: #1a1a1a;
+}
+
+.bg-ps2-blue {
+  background-color: #00a8ff;
 }
