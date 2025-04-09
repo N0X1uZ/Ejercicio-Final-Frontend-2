@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animaciones personalizadas */
+/* Animaciones personalizadas al estilo PS2*/
 @keyframes subtleSlide {
   from {
     opacity: 0;
@@ -18,7 +18,7 @@
   animation: subtleSlide 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Estilos base personalizados */
+/* Estilos base personalizados PS2 */
 @layer base {
   body {
     @apply bg-stone-50 text-stone-800;
